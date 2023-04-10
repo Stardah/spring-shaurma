@@ -1,13 +1,13 @@
-package ru.kpo.spring;
+package com.kpo.springshaurma;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class SpringShaurmaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(SpringShaurmaApplication.class, args);
 	}
 
 }

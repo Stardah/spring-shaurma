@@ -1,12 +1,12 @@
-package ru.kpo.spring.controller;
+package com.kpo.springshaurma.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.kpo.spring.model.Ingredient;
-import ru.kpo.spring.model.Order;
-import ru.kpo.spring.model.Shaurma;
+import com.kpo.springshaurma.model.Ingredient;
+import com.kpo.springshaurma.model.Order;
+import com.kpo.springshaurma.model.Shaurma;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Controller
 @RequestMapping("/order")
-@SessionAttributes("shaurmaOrder")
+@SessionAttributes("order")
 public class CreateShaurmaController {
 
     @ModelAttribute

@@ -1,8 +1,8 @@
-package ru.kpo.spring.converter;
+package com.kpo.springshaurma.converter;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-import ru.kpo.spring.model.Ingredient;
+import com.kpo.springshaurma.model.Ingredient;
 
 import java.util.HashMap;
 import java.util.Map;

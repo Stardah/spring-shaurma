@@ -1,4 +1,4 @@
-package ru.kpo.spring.model;
+package com.kpo.springshaurma.model;
 
 import lombok.Data;
 
