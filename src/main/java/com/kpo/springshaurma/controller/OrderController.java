@@ -6,4 +6,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 @SessionAttributes("order")
 public class OrderController {
+
+    // Don't forget to inject SessionStatus sessionStatus
 }

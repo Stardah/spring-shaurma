@@ -36,6 +36,9 @@
   <div>
     <h3>Комментарий к заказу:</h3>
     <input type="text" th:field="*{comments}"/>
+    <span class="validationError" style="color: red"
+          th:if="${#fields.hasErrors('comments')}"
+          th:errors="*{comments}">Comment can not be empty</span>
     <br/>
     <button>Submit Your Shaurma</button>
   </div>
