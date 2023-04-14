@@ -23,5 +23,4 @@ public class IngredientToStringConverter implements Converter<String, Ingredient
     public Ingredient convert(String id) {
         return ingredientMap.get(id);
     }
-
 }

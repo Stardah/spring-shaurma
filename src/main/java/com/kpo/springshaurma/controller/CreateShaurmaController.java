@@ -1,36 +1,26 @@
 package com.kpo.springshaurma.controller;
 
+import com.kpo.springshaurma.model.Order;
+import com.kpo.springshaurma.model.Shaurma;
+import com.kpo.springshaurma.service.ServiceSample;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import com.kpo.springshaurma.model.Ingredient;
-import com.kpo.springshaurma.model.Order;
-import com.kpo.springshaurma.model.Shaurma;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
 @RequestMapping("/order")
 @SessionAttributes("order")
+@RequiredArgsConstructor
 public class CreateShaurmaController {
+
+    private final ServiceSample serviceSample;
 
     @ModelAttribute
     public void addDataToModel(Model model) {
-        List<Ingredient> ingredients = Arrays.asList(
-                new Ingredient("CHEESE", "Сырный", Ingredient.Type.SAUCE),
-                new Ingredient("SRSW", "Кисло-сладкий", Ingredient.Type.SAUCE),
-                new Ingredient("MAZIK", "Майонез", Ingredient.Type.SAUCE),
-                new Ingredient("KTCHUNEZ", "100 Островов", Ingredient.Type.SAUCE)
-        );
-
-        Ingredient.Type[] types = Ingredient.Type.values();
-        for (Ingredient.Type type : types) {
-            model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
-        }
+        serviceSample.modifyModel(model);
     }
 
     @ModelAttribute(name = "order")
@@ -58,12 +48,4 @@ public class CreateShaurmaController {
 
         return "redirect:/orders/current";
     }
-
-    private Object filterByType(List<Ingredient> ingredients, Ingredient.Type type) {
-        return ingredients
-                .stream()
-                .filter(x -> x.type().equals(type))
-                .collect(Collectors.toList());
-    }
-
 }

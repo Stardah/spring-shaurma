@@ -9,5 +9,4 @@ public class SpringShaurmaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringShaurmaApplication.class, args);
 	}
-
 }

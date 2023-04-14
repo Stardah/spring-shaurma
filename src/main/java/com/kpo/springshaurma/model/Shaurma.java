@@ -7,7 +7,7 @@ import java.util.List;
 @Data
 public class Shaurma {
 
-    private String name;
+    private String comments;
 
     private List<Ingredient> ingredients;
 }

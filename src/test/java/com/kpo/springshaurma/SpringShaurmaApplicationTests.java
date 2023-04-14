@@ -9,5 +9,4 @@ class SpringShaurmaApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
