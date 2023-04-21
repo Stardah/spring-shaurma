@@ -1,10 +1,11 @@
 package com.kpo.springshaurma.model;
 
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 import lombok.NoArgsConstructor;
 
 @Entity
@@ -18,7 +19,6 @@ public final class Ingredient {
     private String name;
     @Enumerated(EnumType.STRING)
     private Type type;
-
 
     public enum Type {
         SAUCE,

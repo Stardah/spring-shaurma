@@ -1,7 +1,7 @@
 package com.kpo.springshaurma.controller;
 
-import com.kpo.springshaurma.model.ShaurmaOrder;
 import com.kpo.springshaurma.model.Shaurma;
+import com.kpo.springshaurma.model.ShaurmaOrder;
 import com.kpo.springshaurma.service.ServiceSample;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

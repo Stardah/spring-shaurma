@@ -1,6 +1,11 @@
 server:
   port: 8090
 
+jwt:
+  token:
+    secret: platform_very_secure_jwt_key
+    expired: 86400000
+
 spring:
   datasource:
     generate-unique-name: false

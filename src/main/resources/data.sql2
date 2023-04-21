@@ -22,7 +22,6 @@ create table if not exists Ingredient (
     );
 
 alter table Shaurma add foreign key (shaurma_order) references Shaurma_Order(id);
-
 alter table Ingredient_Ref add foreign key (ingredient) references Ingredient(id);
 
 delete from Ingredient_Ref;
