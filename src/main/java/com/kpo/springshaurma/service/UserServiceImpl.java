@@ -78,25 +78,22 @@ public class UserServiceImpl implements UserService {
 
 
         response.setMessage(String.format(
-                "Hello, %s!\n" +
+                        "Hello, %s!\n" +
                         "Welcome to Shaurma Order. Please, visit next" +
                         " link: http://localhost:%s/user/activate/%s to activate your profile",
-
                 newShaurmaUser.getFullName(),
                 serverPort,
                 newShaurmaUser.getActivationCode()
         ));
 
         response.setSuccess(true);
-
         return response;
     }
 
     @Transactional
     public Response activateUser(String code) {
         ShaurmaUser shaurmaUser = userRepository.findByActivationCode(code).orElseThrow(
-                () ->
-                        new ApiProblemException(
+                () -> new ApiProblemException(
                                 HttpStatus.NOT_FOUND, "Not found user", null, Collections.emptyMap()));
 
         shaurmaUser.setActivationCode(null);
@@ -148,6 +145,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    // Создаёт прокси для класса и реализует логику rollback'ов, если в процессе транзакции возникнет ошибка
     @Transactional(readOnly = true)
     public com.kpo.springshaurma.api.model.User checkToken(String token) {
         return userMapper.userModel2UserDto(
@@ -164,7 +162,6 @@ public class UserServiceImpl implements UserService {
         Response returnValue = new Response();
 
         returnValue.setSuccess(true);
-
         return returnValue;
     }
 

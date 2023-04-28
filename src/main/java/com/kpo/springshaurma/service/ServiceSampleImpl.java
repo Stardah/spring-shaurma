@@ -18,7 +18,6 @@ public class ServiceSampleImpl implements ServiceSample {
     private final IngredientJDBCRepository ingredientRepository;
     private final OrderRepository orderRepository;
 
-
     public void modifyModel(Model model) {
         List<Ingredient> ingredients = (List<Ingredient>) ingredientRepository.findAll();
         Ingredient.Type[] types = Ingredient.Type.values();

@@ -1,4 +1,4 @@
-create table if not exists `Shaurma_Order` (
+create table if not exists Shaurma_Order (
     id identity
 );
 
@@ -7,19 +7,19 @@ create table if not exists Shaurma (
     comments varchar(50) not null,
     shaurma_order bigint not null,
     shaurma_order_key bigint not null
-    );
+);
 
 create table if not exists Ingredient_Ref (
     ingredient varchar(4) unique not null,
     shaurma bigint not null,
     shaurma_key bigint not null
-    );
+);
 
 create table if not exists Ingredient (
     id varchar(4) unique not null,
     name varchar(25) not null,
     type varchar(10) not null
-    );
+);
 
 alter table Shaurma add foreign key (shaurma_order) references Shaurma_Order(id);
 

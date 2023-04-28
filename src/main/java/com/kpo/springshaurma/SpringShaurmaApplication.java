@@ -8,9 +8,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
-//@EnableJdbcRepositories("com.kpo.springshaurma.repository")
+@SpringBootApplication(exclude = {
+		org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class,
+		org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration.class}
+)
 @EnableJpaRepositories("com.kpo.springshaurma.repository")
+
 public class SpringShaurmaApplication {
 
 	public static void main(String[] args) {
